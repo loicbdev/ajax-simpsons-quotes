@@ -21,7 +21,7 @@
       <h1 class="title">Simpsons Quotes</h1>
       <p>Reload for another quote!</p>
 
-      <div class="content" id="chuck-norris">
+      <div class="content" id="simpsons-quote">
       </div>
     </div>
 
@@ -35,7 +35,6 @@
 // This function loads pokemon data from the Pokemon API
 function fetchSimpsonsJSON() {
   // Feel free to download this HTML and edit it, to use another Pokemon ID
-  const pokemonId = 1; // À SUPPRIMER
   const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
   axios.get(url)
     .then(function(response) {
@@ -46,10 +45,11 @@ function fetchSimpsonsJSON() {
 
       // Build a block of HTML
       const simpsonsHtml = `
-        <p><strong>${simpsons.name}</strong></p>
-        <img src="${simpsons.sprites.front_shiny}" />
+          <img src"${simpsons[0].image}/>
+          <h1>${simpsons[0].character}</h1>
+          <p>${simpsons[0].quote}</p>
       `;
-      document.querySelector('#pokemon').innerHTML = simpsonsHtml;
+      document.querySelector('#simpsons-quote').innerHTML = simpsonsHtml;
     });
 }
 
