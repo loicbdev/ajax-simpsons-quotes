@@ -19,7 +19,7 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Simpsons Quotes</h1>
-      <p>Reload for another quote!</p>
+      <button id="reload">Reload for another quote!</button>
 
       <div class="content" id="simpsons-quote">
       </div>
@@ -46,7 +46,6 @@ function fetchSimpsonsJSON() {
       // Build a block of HTML
       const simpsonsHtml = `
           <img src="${simpsons[0].image}"/>
-          <p>${simpsons[0].characterDirection}</p>
           <h2>${simpsons[0].character}</h2>
           <p>${simpsons[0].quote}</p>   
           `;
@@ -55,6 +54,10 @@ function fetchSimpsonsJSON() {
 }
 
 fetchSimpsonsJSON();
+
+document.getElementById('reload').addEventListener("click", function (){
+  fetchSimpsonsJSON()
+});
   </script>
 </body>
 
