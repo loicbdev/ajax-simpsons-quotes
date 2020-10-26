@@ -1,6 +1,7 @@
 .content{
     display: flex;
     background-color: aquamarine;
+    justify-content: space-around;
     align-items: center;
     padding: 3rem;
     margin: 3rem;
