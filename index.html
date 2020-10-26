@@ -45,10 +45,11 @@ function fetchSimpsonsJSON() {
 
       // Build a block of HTML
       const simpsonsHtml = `
-          <img src"${simpsons[0].image}/>
-          <h1>${simpsons[0].character}</h1>
-          <p>${simpsons[0].quote}</p>
-      `;
+          <img src="${simpsons[0].image}"/>
+          <p>${simpsons[0].characterDirection}</p>
+          <h2>${simpsons[0].character}</h2>
+          <p>${simpsons[0].quote}</p>   
+          `;
       document.querySelector('#simpsons-quote').innerHTML = simpsonsHtml;
     });
 }
