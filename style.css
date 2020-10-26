@@ -1,0 +1,25 @@
+.content{
+    display: flex;
+    background-color: aquamarine;
+    align-items: center;
+    padding: 3rem;
+    margin: 3rem;
+}
+h2{
+    margin: 2rem;
+}
+img{
+    margin: 3rem;
+}
+
+
+@media screen and (max-width: 800px) {
+
+.content {
+    flex-direction: column;
+    margin: 1rem;
+}
+img{
+    margin: 1rem;
+}
+}

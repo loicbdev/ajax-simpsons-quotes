@@ -11,8 +11,8 @@
   <link rel='stylesheet' href='https://unpkg.com/bulma@0.7.5/css/bulma.min.css'>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <style>
-  </style>
+  <link rel="stylesheet" href="style.css">
+ 
 </head>
 
 <body>
@@ -20,7 +20,6 @@
     <div class="container">
       <h1 class="title">Simpsons Quotes</h1>
       <button id="reload">Reload for another quote!</button>
-
       <div class="content" id="simpsons-quote">
       </div>
     </div>
@@ -29,36 +28,7 @@
 
   <!-- We need to load axios first! -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
-  
-  
-  <script>
-// This function loads pokemon data from the Pokemon API
-function fetchSimpsonsJSON() {
-  // Feel free to download this HTML and edit it, to use another Pokemon ID
-  const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
-  axios.get(url)
-    .then(function(response) {
-      return response.data; // response.data instead of response.json() with fetch
-    })
-    .then(function(simpsons) {
-      console.log('data decoded from JSON:', simpsons);
-
-      // Build a block of HTML
-      const simpsonsHtml = `
-          <img src="${simpsons[0].image}"/>
-          <h2>${simpsons[0].character}</h2>
-          <p>${simpsons[0].quote}</p>   
-          `;
-      document.querySelector('#simpsons-quote').innerHTML = simpsonsHtml;
-    });
-}
-
-fetchSimpsonsJSON();
-
-document.getElementById('reload').addEventListener("click", function (){
-  fetchSimpsonsJSON()
-});
-  </script>
+  <script src="scrypt.js"></script>
 </body>
 
 </html>
